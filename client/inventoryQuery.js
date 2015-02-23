@@ -17,6 +17,8 @@ function updateQueryCount(button,increment){
     var requested = Router.current().data().requested;
     requested[roomId] = requested[roomId] || 0;
     requested[roomId] += increment;
+    if(requested[roomId] <= 0)
+        delete requested[roomId];
     var queryString = _.map(requested,function(quantity,roomId) {
         return encodeURIComponent(roomId.replace(/ObjectId|[()""]/ig,'')) + '=' + encodeURIComponent(quantity);
     }).join('&');
