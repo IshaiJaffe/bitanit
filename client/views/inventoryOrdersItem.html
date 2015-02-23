@@ -1,0 +1,37 @@
+<template name="inventoryOrdersItem">
+    {{>formHeader}}
+    {{#autoForm collection=collection id=id type='readonly' doc=document}}
+        <fieldset class='lean'>
+            {{> afQuickField name='id'}}
+            {{> afQuickField name='supplier'}}
+            {{> afQuickField name='orderDate'}}
+            {{> afQuickField name='deliveryDate'}}
+            <label>
+                פריטים:
+            </label>
+            <table class="contentList" style="width:100%">
+                <thead>
+                    <th width="33%">#</th>
+                    <th width="33%">כמות</th>
+                    <th width="33%">סופק</th>
+                </thead>
+                <tbody>
+                {{#each document.content}}
+                    <tr>
+                        <td>
+                            {{itemName item}}
+                        </td>
+                        <td>
+                            {{quantity}}
+                        </td>
+                        <td>
+                            {{supplied}}
+                        </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </fieldset>
+    {{/autoForm}}
+    {{>formFooter}}
+</template>

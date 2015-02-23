@@ -1,0 +1,13 @@
+<template name="workOrdersItemEdit">
+	{{>formHeader}}
+	{{#autoForm collection=collection id=id type='update' doc=document}}
+	 <fieldset>
+		{{> afQuickField name='room'}}
+		{{> afQuickField name='customer'}}
+		{{> afQuickField name='orderDate'}}
+		{{> afQuickField name='deadline'}}
+		{{> afQuickField name='deliveryDate'}}
+	</fieldset>
+  {{/autoForm}}
+	{{>formFooter}}
+</template>

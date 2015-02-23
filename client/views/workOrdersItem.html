@@ -1,0 +1,35 @@
+<template name="workOrdersItem">
+    {{>formHeader}}
+    {{#autoForm collection=collection id=id type='readonly' doc=document}}
+        <fieldset class='lean'>
+            {{> afQuickField name='id'}}
+            {{> afQuickField name='room'}}
+            {{> afQuickField name='customer'}}
+            {{> afQuickField name='orderDate'}}
+            {{> afQuickField name='deadline'}}
+            {{> afQuickField name='deliveryDate'}}
+            <label>
+                סטטוס:
+            </label>
+            <ul class="checklist">
+                {{#each document.stages}}
+                    <li data-stage="{{name}}">
+                        {{workOrderStage name}}
+                        {{#if approved}}
+                            <i class="fa fa-check"></i>
+                        {{else}}
+                            <button type="button" class="btn btn-danger">אשר</button>
+                        {{/if}}
+                    </li>
+                {{/each}}
+            </ul>
+            {{#if document.deliveryDate}}
+                <button type="button" class="btn btn-primary"  style="width:100%; margin-bottom:20px;" disabled>ההזמנה נשלחה</button>
+            {{else}}
+                <button style="width:100%; margin-bottom:20px;" type="button" id="sendWorkOrder" class="btn btn-primary">שלח עבודה</button>
+            {{/if}}
+
+        </fieldset>
+    {{/autoForm}}
+    {{>formFooter}}
+</template>

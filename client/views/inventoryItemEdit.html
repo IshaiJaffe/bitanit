@@ -1,0 +1,13 @@
+<template name="inventoryItemEdit">
+	{{>formHeader}}
+	{{#autoForm collection=collection id=id type='update' doc=document}}
+	 <fieldset>
+		{{> afQuickField name='mac'}}
+		{{> afQuickField name='name'}}
+		{{> afQuickField name='store'}}
+		{{> afQuickField name='storeMac'}}
+		{{> afQuickField name='picture'}}
+	</fieldset>
+  {{/autoForm}}
+	{{>formFooter}}
+</template>

@@ -1,0 +1,21 @@
+<template name="formHeader">
+	
+</template>
+<template name="formBody">
+	{{> quickForm collection=collection id=id type="readonly" doc=document }}
+</template>
+<template name="formFooter">
+	{{#if actions.length}}
+		<div class="viewFooter visible-xs">
+			<ul class="tableActions">			
+				{{#each actions}}
+					<li><a class="action-{{id}}" href="#{{id}}" title="{{name}}">
+					{{#if fa}}
+					<i class="fa fa-{{fa}}" ></i>
+					{{/if}}
+					</a></li>
+				{{/each}}
+			</ul>
+		</div>
+	{{/if}}
+</template>

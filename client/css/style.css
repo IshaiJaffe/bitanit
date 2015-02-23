@@ -1,0 +1,203 @@
+body{
+    direction:rtl;
+	padding-top:57px;
+}
+table thead th{
+    text-align:right;
+}
+table tbody tr td i.fa{
+	font-size:28px;
+	color:#4CAF50;
+}
+.navbar{
+    background:#414141;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
+    background:#414141;
+}
+.navbar a{
+    color:#fff;
+}
+@media (min-width: 768px){
+    .navbar-nav > li {
+        float: right;
+    }
+}
+ul{
+    list-style:none;
+}
+.back-button{
+	line-height: 50px;
+	font-size: 35px;
+	float: right;
+}
+.save-button{
+	line-height: 36px;
+	font-size: 25px;
+	float: left;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 7px;
+    margin-left:6px;
+}
+.table-header{
+	color:#fff;
+}
+.table-header .tableTitle{
+	line-height: 50px;
+	padding: 0 10px;
+}
+.table-header .dropdown{
+    margin-right:10px;
+	line-height:50px;
+}
+.table-header .search{
+    float:left;
+	line-height:50px;
+	margin-left:10px;
+	position:relative;
+}
+.table-header .search input{
+    line-height:30px;
+	color:#afafaf;
+	padding:0 10px;
+}
+.table-header .search i{
+    position:absolute;
+	left:10px;
+	color:#efefef;
+	top: 50%;
+	margin-top: -10px;
+	font-size: 20px;
+	pointer-events: none;
+}
+.tableActions{
+    position:fixed;
+	right:10px;
+	bottom:10px;
+	left:10px;
+	pointer-events:none;
+	list-style:none;
+}
+.tableActions > li{
+    float:left;
+	margin-right:10px;
+	pointer-events:all;
+}
+.tableActions > li a{
+    display:block;
+	width:50px;
+	height:50px;
+	border-radius:50%;
+	background:#1DE9B6;
+	text-align:center;
+}
+.tableActions > li a.action-delete{
+    background:#E53935;
+}
+.tableActions > li:hover a{
+    background:#00BFA5;
+}
+.tableActions > li:hover a.action-delete{
+    background:#B71C1C;
+}
+.tableActions > li > a > i{
+    line-height:50px;
+	color:#000;
+	font-size:25px;
+}
+
+.form-group select[readonly]{
+	pointer-events:none;
+}
+.lean .form-group{
+    clear:both;
+	margin-bottom:20px;
+}
+.lean .form-group label{
+	float:right;
+	width:30%;
+}
+.lean .form-group input,.lean .form-group select{
+	float:right;
+	margin-right:4%;
+	width:65%;
+	margin-bottom:10px;
+}
+.checklist{
+   list-style:none;
+}
+.checklist > li{
+   display:block;
+   clear:both;
+}
+.checklist > li > button{
+    float:left;
+	margin-bottom:5px;
+}
+.checklist > li > i{
+    float:left;
+	margin-bottom:5px;
+	font-size:30px;
+	color:#4CAF50;
+	cursor:pointer;
+}
+.sign-pad{
+	width: 100%;
+	height: 150px;
+	position: relative;
+}
+.sign-pad canvas{
+	width:100%;
+	height:100%;
+}
+.sign-pad .watermark{
+	display: block;
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	pointer-events: none;
+	font-size: 60px;
+	opacity: 0.2;
+	width: 100%;
+	text-align: center;
+	line-height: 150px;
+}
+
+.tt-dropdown-menu{
+	padding:5px 10px;
+	background:#BBDEFB;
+	min-width:200px;
+}
+.inventoryQuery{
+	list-style:none;
+	direction:ltr;
+	text-align:left;
+	margin:0;
+	padding:0;
+}
+.inventoryQuery > li{
+	float:left;
+    margin-right: 30px;
+}
+.inventoryQuery > li[overlimit] span{
+    color:#B71C1C;
+}
+.inventoryQuery > li input{
+	width:40px;
+}
+.inventoryQuery > li button{
+	border:none;
+	background:#009688;
+	color:white;
+	padding:0;
+	width:25px;
+	height:25px;
+}
+.inventoryQuery > li button:hover{
+	background:#004D40;
+}
+.inventoryQuery > li button i{
+	line-height:25px;
+}

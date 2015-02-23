@@ -1,0 +1,18 @@
+<template name="inventoryItem">
+	{{>formHeader}}
+	{{#autoForm collection=collection id=id type='readonly' doc=document}}
+	 <fieldset>
+		{{> afQuickField name='mac'}}
+		{{> afQuickField name='name'}}
+		{{> afQuickField name='store'}}
+		{{> afQuickField name='quantity'}}
+		{{> afQuickField name='allocatedQuantity'}}
+		{{> afQuickField name='orderedQuantity'}}
+		{{> afQuickField name='storeMac'}}
+	</fieldset>
+  {{/autoForm}}
+	{{#if document.picture}}
+		<img style="max-width:100%; margin-bottom:20px;" src="{{pictureURL document.picture}}" />
+	{{/if}}
+	{{>formFooter}}
+</template>

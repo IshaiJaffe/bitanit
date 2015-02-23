@@ -1,0 +1,13 @@
+<template name="query">
+	<ul class="inventoryQuery">
+		{{#each rooms}}
+		<li overlimit="{{isOverLimit}}" data-room="{{id}}">
+			<label>{{name}}</label>
+			<input type="number" min="0" step="1" value="{{requestedQuantity}}" />
+			<button class="up"><i class="fa fa-plus"></i></button>
+			<button class="down"><i class="fa fa-minus"></i></button>
+			<span>{{canProduce}}</span>
+		</li>
+		{{/each}}
+	</ul>
+</template>

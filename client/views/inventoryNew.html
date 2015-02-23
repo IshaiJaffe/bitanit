@@ -1,0 +1,25 @@
+<template name="inventoryNew">
+	{{#autoForm collection=collection id="inventoryNew"  type="method" meteormethod="addInventory"}}
+	 <fieldset>
+		{{>macAutoComplete}}
+		<div class="form-group">    
+			<label class="control-label">כמות שנוספה</label>
+			<input type="number" step="1" min="0" name="addedQuantity" data-schema-key="addedQuantity" value="1" class="form-control" >    		
+		</div>
+		{{> afQuickField name='name'}}
+		{{> afQuickField name='store'}}
+		{{> afQuickField name='storeMac'}}
+	</fieldset>
+  {{/autoForm}}
+</template>
+<template name="macAutoComplete">
+		<div class="form-group">    
+			<label class="control-label">מק"ט</label>
+			<input id="macAutocomplete" class="form-control typeahead" name="mac" type="text" data-schema-key="mac" 			
+			autocomplete="off" spellcheck="off"
+			data-sets="macs" data-template="mac"/>			
+		</div>
+</template>
+<template name="mac">
+	<p>{{mac}} - {{name}}</p>
+</template>

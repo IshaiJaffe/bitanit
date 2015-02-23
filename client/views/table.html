@@ -1,0 +1,79 @@
+<template name="tableHeader">
+	<div class="table-header" data-type="{{configName}}">
+		{{#if filters.length}}
+			<div class="dropdown pull-right">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+					{{title}} <i class="fa fa-caret-down"></i>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-right" role="menu">
+					<li><a href="?">הכל</a></li>
+				  {{#each filters}}
+						<li role="presentation" class="divider"></li>
+						{{#each values}}
+							<li><a href="{{createQuery ../id id}}">{{name}}</a></li>
+						{{/each}}						
+					{{/each}}
+				</ul>
+			</div>	
+		{{else}}
+			<span class="tableTitle pull-right">{{title}}</span>
+		{{/if}}
+		{{#if searchable }}
+			{{>searchField}}
+		{{/if}}
+		{{#if actions.length}}
+		<div class="hidden-xs tableActions">
+		</div>
+		{{/if}}
+	</div>
+	
+	
+</template>
+<template name="tableBody">
+<div class="viewBody" data-type="{{configName}}">
+		<table class="table">
+			<thead>
+				{{#each columns}}
+                    {{#if noSort}}
+                        <th>{{name}}</th>
+                    {{else}}
+                        <th class="sortable" data-field="{{id}}">
+                            <a class="order{{order}}" href="{{orderBy id}}">
+                            {{#if equals order -1 }}
+                                <i class="fa fa-caret-up"></i>
+                            {{/if}}
+                            {{#if equals order 1 }}
+                                <i class="fa fa-caret-down"></i>
+                            {{/if}}
+                            {{name}}
+                        </a></th>
+                    {{/if}}
+				{{/each}}
+			</thead>
+			<tbody>
+				{{#each rows }}
+					<tr class="itemLink" data-item={{_id}}>
+						{{#each ../columns}}
+							<td>{{{tableValue . .. }}}</td>
+						{{/each}}
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</template>
+<template name="tableFooter">
+{{#if actions.length}}
+	<div class="viewFooter visible-xs">
+		<ul class="tableActions">			
+			{{#each actions}}
+				<li><a class="action-{{id}}" href="#{{id}}" title="{{name}}">
+				{{#if fa}}
+				<i class="fa fa-{{fa}}" ></i>
+				{{/if}}
+				</a></li>
+			{{/each}}
+		</ul>
+	</div>
+	{{/if}}
+</template>
